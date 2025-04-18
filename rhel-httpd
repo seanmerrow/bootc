@@ -1,0 +1,21 @@
+---
+image:
+  - metadata:
+      name: rhel9-http
+      tag: v1
+      type: bootc
+      bootable: true  
+  - config:
+    - image:
+        name: quay.io/seanmerrow/rhel9-httpd:v1
+        base: registry.redhat.io/bootc/rhel9-bootc:latest
+        containerfile: ./Containerfile
+    - bootable:
+        name: rhel9-httpd-v1
+        type: qcow2
+        config: ./config.toml
+repo:
+  - name: quay.io/seanmerrow
+  - user: smerrow
+  - password: ********
+author: smerrow@redhat.com
